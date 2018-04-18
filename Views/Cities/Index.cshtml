@@ -1,0 +1,15 @@
+<link rel="stylesheet" type="text/css" href="wwwroot/css/styles.css" />
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+<h1>Places To Go</h1>
+<ul>
+  @foreach(var city in Model)
+  {
+    <p>Country:@city.GetCountry()</p>
+    <p>City: @city.GetCity()</p>
+    <p><img src="@city.GetImage()"></p>
+  }
+</ul>
+<p><a href="/cities/new">Add another Destination</a></p>
+<form action="/cities/delete" method="post">
+  <button type="submit" name="button">Clear All Items</button>
+</form>
